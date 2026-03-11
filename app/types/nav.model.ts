@@ -10,7 +10,7 @@ export const NavLinks: NavModel[] = [
 		name: "Dashboard",
 	},
 	{
-		href: "/contact",
-		name: "Contact Me",
+		href: "/stepper",
+		name: "Stepper",
 	},
 ]
