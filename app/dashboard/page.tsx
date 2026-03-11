@@ -5,13 +5,12 @@ import { format } from "date-fns"
 import { GridStack } from "gridstack"
 import "gridstack/dist/gridstack.min.css"
 import { useEffect } from "react"
-import { useGetSimpleDataTableListQuery } from "../services/dashboard.service"
-// import DashboardChart from "./Chart/page"
-// import SimpleDataTable from "./SimpleDataTable"
+import { useGetIntegratedDataTableListQuery, useGetSimpleDataTableListQuery } from "../services/dashboard.service"
 import { simpleDataTableCols } from "./SimpleDataTable/columns"
-// import DashboardChart from "./Chart/page"
-import SimpleDataTable from "./SimpleDataTable"
 import DashboardChart from "./Chart/page"
+import SimpleDataTable from "./SimpleDataTable"
+import IntegratedDataTable from "./IntegratedDataTable"
+import { IntegratedDataTableCols } from "./IntegratedDataTable/columns"
 
 export default function Dashboard() {
 	const today = new Date()
@@ -57,11 +56,11 @@ export default function Dashboard() {
 				</div>
 				<div className="grid-stack-item" gs-w="9" gs-h="6">
 					<div className="grid-stack-item-content rounded-md border m-3 p-5 bg-white">
-						{/* <IntegratedDataTable
+						<IntegratedDataTable
 							title="API Integrated Data Table"
 							columns={IntegratedDataTableCols}
 							dataQuery={useGetIntegratedDataTableListQuery}
-						/> */}
+						/>
 					</div>
 				</div>
 			</div>
