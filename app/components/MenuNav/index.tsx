@@ -18,9 +18,7 @@ export default function MenuNav({ navigation }: { navigation: NavModel[] }) {
 							<span className="absolute -inset-0.5" />
 							<span className="sr-only">Open main menu</span>
 							<MenuIcon aria-hidden="true" className="block size-6 group-data-open:hidden"/>
-							{/* <Bars3Icon aria-hidden="true" className="block size-6 group-data-open:hidden" /> */}
 							<X aria-hidden="true" className="hidden size-6 group-data-open:block"/>
-							{/* <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-open:block" /> */}
 						</DisclosureButton>
 					</div>
 					<div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
