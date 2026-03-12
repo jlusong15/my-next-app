@@ -10,7 +10,9 @@
 			"request": "launch",
 			"url": "http://localhost:3000",
 			"webRoot": "${workspaceFolder}",
-			"sourceMaps": true
+      "preLaunchTask": "nextjs-dev",
+			"postDebugTask": "kill-terminal",
+			// "sourceMaps": true
 		}
 	]
 }
