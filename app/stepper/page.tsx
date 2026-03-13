@@ -56,10 +56,10 @@ export default function StepperForm() {
 	}
 
 	return (
-		<div id="stepper-form" className="w-full px-5 mt-3">
-			<div className="max-w-2xl mt-5 m-auto">
-				<Card className="pt-0 border border-gray-6 rounded-xl overflow-hidden">
-					<div className="flex justify-between bg-gray-50 border-b border-gray-6 p-5">
+		<div className="w-full px-5 mt-3">
+			<div>
+				<Card className="pt-0 border-0! overflow-hidden shadow-none! rounded-0 ring-0">
+					<div className="flex justify-between bg-gray-50 border-b rounded-0 border-gray-6 p-5">
 						{FormSteps?.map((step) => (
 							<div
 								className={cn(
@@ -75,8 +75,8 @@ export default function StepperForm() {
 							</div>
 						))}
 					</div>
-					<CardContent>{stepMapper?.[currentStep]}</CardContent>
-					<CardFooter>
+					<CardContent className="border-b-0">{stepMapper?.[currentStep]}</CardContent>
+					<CardFooter className="bg-transparent border-t-0">
 						<div className="flex justify-between w-full">
 							{currentStep > 0 && currentStep < 3 && (
 								<Button variant="outline" onClick={handleBack}>

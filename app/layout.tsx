@@ -5,6 +5,10 @@ import "./globals.css"
 import Providers from "./providers"
 import { NavLinks } from "./types/nav.model"
 
+import 'froala-editor/css/froala_editor.pkgd.min.css';
+import 'froala-editor/css/froala_style.min.css';
+import 'froala-editor/css/plugins.pkgd.min.css';
+
 const geistSans = Geist({
 	variable: "--font-geist-sans",
 	subsets: ["latin"],

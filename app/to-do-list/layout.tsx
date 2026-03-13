@@ -1,23 +1,7 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "../components/Sidebar"
-import { BreadcrumbBasic } from "../components/BreadcrumbBasic"
-import Button from "../components/Button"
-import { Calendar, CircleCheck, CircleDashed, CirclePlus, Logs, Timer } from "lucide-react"
-import { Input } from "@/components/ui/input"
-import { PopoverBasic } from "../components/Popover"
-import { CollapsibleSection } from "../components/CollapsibleSection"
 
-export default function TasksLayout({ children }: { children: React.ReactNode }) {
-	const taskBreadcrumb = [
-		{
-			link: "#",
-			name: "Task",
-		},
-		{
-			link: "",
-			name: "Create Task",
-		},
-	]
+export default function ToDoListLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<div>
 			{/* Sidebar */}
@@ -33,13 +17,10 @@ export default function TasksLayout({ children }: { children: React.ReactNode })
 								<SidebarTrigger className="cursor-pointer" />
 							</div>
 							<div className="flex w-full px-3.75 border-l border-l-neutral-200 font-bold">
-								<span className="font-bold">Add Task</span>
+								<span className="font-bold">Send me a message</span>
 							</div>
 						</div>
-						{/* Breadcrumbs */}
-						<div className="p-5">
-							<BreadcrumbBasic items={taskBreadcrumb} className="text-xs!" />
-						</div>
+
 						{/* Content */}
 						<div className="p-5">{children}</div>
 					</div>

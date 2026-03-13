@@ -1,5 +1,6 @@
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarHeader } from "@/components/ui/sidebar"
 import { cn } from "@/lib/utils"
+import DefaultSidebar from "./default-sidebar"
 
 interface SidebarProps {
 	header?: React.ReactNode
@@ -15,7 +16,7 @@ export function AppSidebar({ children, className, header, footer }: SidebarProps
 
 			<SidebarContent>
 				<SidebarGroup />
-				{children}
+				{children ?? <DefaultSidebar />}
 				<SidebarGroup />
 			</SidebarContent>
 
