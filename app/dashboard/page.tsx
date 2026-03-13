@@ -32,7 +32,7 @@ export default function Dashboard() {
 			<div className={cn("grid-stack", isGridLoading && "hidden")}>
 				<div className="grid-stack-item" gs-w="5" gs-h="3.5">
 					<div className="grid-stack-item-content rounded-md border m-3 p-3 bg-white">
-						<h2>Visitor Statistics</h2>
+						<h4>Visitor Statistics</h4>
 						<DashboardChart />
 					</div>
 				</div>
@@ -41,7 +41,7 @@ export default function Dashboard() {
 				</div>
 				<div className="grid-stack-item" gs-w="4" gs-h="4">
 					<div className="grid-stack-item-content rounded-md border m-3 p-3 bg-white">
-						<h2>Simple Data Table</h2>
+						<h4>Simple Data Table</h4>
 						{!simpleDataLoading ? (
 							<SimpleDataTable columns={simpleDataTableCols} data={simpleDataTableData || []} />
 						) : (

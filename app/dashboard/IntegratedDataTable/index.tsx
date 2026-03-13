@@ -99,7 +99,7 @@ export default function IntegratedDataTable<TData, TValue>({
 	return (
 		<div>
 			<div className="flex items-center">
-				<h2>{title}</h2>
+				<h4>{title}</h4>
 				{(isFetching || isLoading) && <Spinner className="ml-2 mt-1" />}
 			</div>
 
