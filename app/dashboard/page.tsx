@@ -14,6 +14,7 @@ import { IntegratedDataTableCols } from "./IntegratedDataTable/columns"
 import { cn } from "@/lib/utils"
 import { ChartAreaBasic } from "./AreaChart"
 import { Pin } from "lucide-react"
+import { BarChartBasic } from "./BarChart"
 
 export default function Dashboard() {
 	const today = new Date()
@@ -61,7 +62,7 @@ export default function Dashboard() {
 				<div className="grid-stack-item" gs-w="5" gs-h="3.5">
 					<div className="grid-stack-item-content rounded-md border m-3 p-3 bg-white">
 						<h4>Milestone</h4>
-						<ChartAreaBasic />
+						<BarChartBasic />
 					</div>
 				</div>
 				<div className="grid-stack-item" gs-w="7" gs-h="6">
