@@ -4,20 +4,23 @@ import { Spinner } from "@/components/ui/spinner"
 import { format } from "date-fns"
 import { GridStack } from "gridstack"
 import "gridstack/dist/gridstack.min.css"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useGetIntegratedDataTableListQuery, useGetSimpleDataTableListQuery } from "../services/dashboard.service"
 import { simpleDataTableCols } from "./SimpleDataTable/columns"
 import DashboardChart from "./Chart/page"
 import SimpleDataTable from "./SimpleDataTable"
 import IntegratedDataTable from "./IntegratedDataTable"
 import { IntegratedDataTableCols } from "./IntegratedDataTable/columns"
+import { cn } from "@/lib/utils"
 
 export default function Dashboard() {
 	const today = new Date()
 	const { data: simpleDataTableData, isLoading: simpleDataLoading } = useGetSimpleDataTableListQuery()
+	const [isGridLoading, setGridLoad] = useState<boolean>(true)
 
 	useEffect(() => {
 		GridStack.init()
+		setGridLoad(false)
 	}, [])
 
 	return (
@@ -25,7 +28,8 @@ export default function Dashboard() {
 			<div className="p-3 my-2">
 				<h1 className="text-2xl font-semibold">Welcome! Today is {format(today, "PPPP")}!</h1>
 			</div>
-			<div className="grid-stack">
+			{isGridLoading && <Spinner className="ml-3 mt-2" />}
+			<div className={cn("grid-stack", isGridLoading && "hidden")}>
 				<div className="grid-stack-item" gs-w="5" gs-h="3.5">
 					<div className="grid-stack-item-content rounded-md border m-3 p-3 bg-white">
 						<h2>Visitor Statistics</h2>
