@@ -1,6 +1,10 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "../components/Sidebar"
 import { BreadcrumbBasic } from "../components/BreadcrumbBasic"
+import Button from "../components/Button"
+import { CirclePlus } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { PopoverBasic } from "../components/Popover"
 
 export default function TasksLayout({ children }: { children: React.ReactNode }) {
 	const taskBreadcrumb = [
@@ -15,8 +19,26 @@ export default function TasksLayout({ children }: { children: React.ReactNode })
 	]
 	return (
 		<div>
+			{/* Sidebar */}
 			<SidebarProvider>
-				<AppSidebar />
+				<AppSidebar className="pt-14 ">
+					<Button>
+						<CirclePlus className="mr-1" />
+						Add Task
+					</Button>
+
+					<div className="my-2.5 flex gap-x-1 justify-between">
+						<div className="w-full">
+							<Input placeholder="Find Task..." className="bg-white text-xs!" />
+						</div>
+
+						<div>
+							<PopoverBasic titleContent="Filter">Add Filters here</PopoverBasic>
+						</div>
+					</div>
+				</AppSidebar>
+
+				{/* Main content */}
 				<main className="w-full p-2.5">
 					<div className="bg-white border border-neutral-200 rounded-[10px]">
 						{/* Header */}

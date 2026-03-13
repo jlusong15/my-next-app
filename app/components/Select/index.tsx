@@ -19,12 +19,12 @@ export function SelectDropdown({ className, items, placeholder, ...props }: Sele
 	return (
 		<>
 			<Select>
-				<SelectTrigger className="hidden w-full rounded-lg sm:ml-auto sm:flex" aria-label="Select a value">
+				<SelectTrigger className="hidden w-full rounded-sm sm:ml-auto sm:flex" aria-label="Select a value">
 					<SelectValue placeholder={placeholder ?? "Select"} />
 				</SelectTrigger>
-				<SelectContent className="rounded-xl">
+				<SelectContent className="rounded-sm">
 					{items?.map((item, index) => (
-						<SelectItem value={item.value} className={cn("rounded-lg", item.className ?? "")} key={index}>
+						<SelectItem value={item.value} className={cn("rounded-sm", item.className ?? "")} key={index}>
 							{item.display || ""}
 						</SelectItem>
 					))}

@@ -32,7 +32,7 @@ export default function TasksPage() {
 		{
 			value: "review",
 			display: "Sprint Review",
-		}
+		},
 	]
 	const groupList = [
 		{
@@ -46,13 +46,13 @@ export default function TasksPage() {
 		{
 			value: "sr",
 			display: "Senior/Lead",
-		}
+		},
 	]
 
 	return (
 		<div className="px-5">
 			<div className="mb-5">
-				<h2 className="font-bold">Add Task</h2>
+				<h4 className="font-bold">Add Task</h4>
 			</div>
 			<p>Task Category</p>
 			<div className="my-2">
@@ -62,7 +62,7 @@ export default function TasksPage() {
 			<div className="pt-5 grid gap-y-5">
 				<CollapsibleSection
 					triggerHeader={
-						<span className="flex">
+						<span className="flex items-center text-sm">
 							<CircleCheck className="mr-2.5 text-primary" /> Step1
 						</span>
 					}
@@ -87,7 +87,7 @@ export default function TasksPage() {
 					</div>
 				</CollapsibleSection>
 
-				<CollapsibleSection triggerHeader="Step2">
+				<CollapsibleSection triggerHeader={<span className="items-center text-sm">Step2</span>}>
 					<div className="px-10 mb-2.5 ml-3 border-l border-l-neutral-200">
 						<div className="flex mx-5 pt-5 mb-5 gap-5 pr-5">
 							<div className="flex flex-col w-[50%]">
