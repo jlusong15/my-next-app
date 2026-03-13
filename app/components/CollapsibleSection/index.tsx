@@ -13,7 +13,7 @@ export function CollapsibleSection({ children, className, items, triggerHeader, 
 		<>
 			<Collapsible className={cn(className ?? "")}>
 				<CollapsibleTrigger className="group w-full cursor-pointer">
-				<div className="flex mb-2.5 justify-between">
+				<div className="flex mb-2.5 justify-between items-center">
 					<>{triggerHeader}</>
 					<div>
 						<ChevronDownIcon className="ml-auto group-data-[state=open]:rotate-180 size-4 text-neutral-500" />
