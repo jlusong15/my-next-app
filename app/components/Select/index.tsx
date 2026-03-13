@@ -10,15 +10,17 @@ interface SelectDropdownItemModel {
 type SelectDropdownListModel = SelectDropdownItemModel[]
 
 interface SelectDropdownProps {
-	placeholder?: string
 	items: SelectDropdownListModel // your array of items
-	[key: string]: any // for ...props if you want to allow any extra props
+	onValueChange?: (value: string) => void
+	placeholder?: string
+	value?: string
+	[key: string]: any
 }
 
-export function SelectDropdown({ className, items, placeholder, ...props }: SelectDropdownProps) {
+export function SelectDropdown({ className, items, placeholder, value, onValueChange, ...props }: SelectDropdownProps) {
 	return (
 		<>
-			<Select>
+			<Select value={value?.toString() ?? ""} onValueChange={onValueChange}>
 				<SelectTrigger className="hidden w-full rounded-sm sm:ml-auto sm:flex" aria-label="Select a value">
 					<SelectValue placeholder={placeholder ?? "Select"} />
 				</SelectTrigger>
