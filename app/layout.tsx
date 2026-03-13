@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-	title: "My NextJS App",
+	title: "My React NextJS App",
 	description: "Created by Jennifer Bautista",
 }
 
