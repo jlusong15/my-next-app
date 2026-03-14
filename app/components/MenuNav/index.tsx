@@ -2,6 +2,7 @@
 import { NavModel } from "@/app/types/nav.model"
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react"
 import { Cat, Menu as MenuIcon, X } from "lucide-react"
+import Link from "next/link"
 
 function classNames(...classes: (string | undefined | null | false)[]): string {
 	return classes?.filter(Boolean)?.join(" ")
@@ -25,7 +26,7 @@ export default function MenuNav({ navigation }: { navigation: NavModel[] }) {
 						<div className="hidden sm:block">
 							<div className="flex space-x-4">
 								{navigation.map((item) => (
-									<a
+									<Link
 										key={item.name}
 										href={item.href}
 										aria-current={item.current ? "page" : undefined}
@@ -35,7 +36,7 @@ export default function MenuNav({ navigation }: { navigation: NavModel[] }) {
 										)}
 									>
 										{item.name}
-									</a>
+									</Link>
 								))}
 							</div>
 						</div>
@@ -63,7 +64,7 @@ export default function MenuNav({ navigation }: { navigation: NavModel[] }) {
 								</MenuItem>
 								<MenuItem>
 									<a
-										href="https://buymeacoffee.com/"
+										href="https://buymeacoffee.com/jhennalilu"
 										className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
 										target="_blank"
 									>

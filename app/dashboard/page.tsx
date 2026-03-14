@@ -1,20 +1,21 @@
 "use client"
 
 import { Spinner } from "@/components/ui/spinner"
+import { cn } from "@/lib/utils"
 import { format } from "date-fns"
 import { GridStack } from "gridstack"
 import "gridstack/dist/gridstack.min.css"
+import { Lightbulb, Pin } from "lucide-react"
 import { useEffect, useState } from "react"
 import { useGetIntegratedDataTableListQuery, useGetSimpleDataTableListQuery } from "../services/dashboard.service"
-import { simpleDataTableCols } from "./SimpleDataTable/columns"
+import { BarChartBasic } from "./BarChart"
 import DashboardChart from "./Chart/page"
-import SimpleDataTable from "./SimpleDataTable"
 import IntegratedDataTable from "./IntegratedDataTable"
 import { IntegratedDataTableCols } from "./IntegratedDataTable/columns"
-import { cn } from "@/lib/utils"
-import { ChartAreaBasic } from "./AreaChart"
-import { Pin } from "lucide-react"
-import { BarChartBasic } from "./BarChart"
+import RandomQuote from "./RandomQuote/page"
+import RandomTrivia from "./RandomTrivia/page"
+import SimpleDataTable from "./SimpleDataTable"
+import { simpleDataTableCols } from "./SimpleDataTable/columns"
 
 export default function Dashboard() {
 	const today = new Date()
@@ -39,7 +40,7 @@ export default function Dashboard() {
 							<Pin className="mr-1 size-5 text-primary" /> QOTD
 						</h4>
 						<strong>Quote of the Day</strong>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In auctor viverra eros sit amet ullamcorper.</p>
+						<RandomQuote />
 					</div>
 				</div>
 				<div className="grid-stack-item" gs-w="5" gs-h="4">
@@ -76,14 +77,10 @@ export default function Dashboard() {
 				</div>
 				<div className="grid-stack-item" gs-w="5" gs-h="2">
 					<div className="grid-stack-item-content rounded-md border m-3 p-2 bg-white">
-						<h4 className="mb-2">Other Information</h4>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. In auctor viverra eros sit amet ullamcorper.
-							Donec tincidunt quam vel augue blandit dapibus. Phasellus aliquet dignissim dui a vehicula. Morbi
-							tristique lorem eros, in volutpat nunc cursus sit amet. Nunc erat est, aliquet a nibh ultrices, rutrum
-							hendrerit mauris. Fusce quis ultricies quam, tempus suscipit risus. Cras gravida arcu eget mauris luctus,
-							ac aliquet ante mattis. Maecenas non urna eget arcu imperdiet iaculis.
-						</p>
+						<h4 className="mb-2 flex items-center">
+							<Lightbulb className="mr-1 size-5 text-primary" /> Trivia
+						</h4>
+						<RandomTrivia />
 					</div>
 				</div>
 			</div>
