@@ -1,9 +1,9 @@
-import { CircleCheck } from "lucide-react"
-import { SelectDropdown } from "../components/Select"
-import { CollapsibleSection } from "../components/CollapsibleSection"
-import { DatePicker } from "../components/DatePicker"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { CircleCheck } from "lucide-react"
+import { CollapsibleSection } from "../components/CollapsibleSection"
+import { DatePicker } from "../components/DatePicker"
+import { SelectDropdown } from "../components/Select"
 
 export default function TasksPage() {
 	const taskCategoryList = [
@@ -61,6 +61,7 @@ export default function TasksPage() {
 
 			<div className="pt-5 grid gap-y-5">
 				<CollapsibleSection
+					defaultOpen={true}
 					triggerHeader={
 						<span className="flex items-center text-sm">
 							<CircleCheck className="mr-2.5 text-primary" /> Step1
@@ -87,7 +88,7 @@ export default function TasksPage() {
 					</div>
 				</CollapsibleSection>
 
-				<CollapsibleSection triggerHeader={<span className="items-center text-sm">Step2</span>}>
+				<CollapsibleSection defaultOpen={true} triggerHeader={<span className="items-center text-sm">Step2</span>}>
 					<div className="px-10 mb-2.5 ml-3 border-l border-l-neutral-200">
 						<div className="flex mx-5 pt-5 mb-5 gap-5 pr-5">
 							<div className="flex flex-col w-[50%]">
