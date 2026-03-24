@@ -10,8 +10,12 @@ export default function RandomQuote() {
 
 	return (
 		<div className="text-center p-6">
-			<p className="text-xl italic">"{randomQuote.quote}"</p>
-			<p className="mt-2 text-sm text-gray-500">— {randomQuote.author}</p>
+			{randomQuote && (
+				<>
+					<p className="text-xl italic">"{randomQuote.quote || ""}"</p>
+					<p className="mt-2 text-sm text-gray-500">— {randomQuote.author}</p>
+				</>
+			)}
 		</div>
 	)
 }

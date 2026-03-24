@@ -10,8 +10,12 @@ export default function RandomTrivia() {
 
 	return (
 		<div className="p-2 text-center">
-			<h3 className="text-lg font-semibold mb-2">Random Trivia</h3>
-			<p className="text-gray-700">{randomTrivia.fact ?? ''}</p>
+			{randomTrivia && (
+				<>
+					<h3 className="text-lg font-semibold mb-2">Random Trivia</h3>
+					<p className="text-gray-700">{randomTrivia.fact ?? ""}</p>
+				</>
+			)}
 		</div>
 	)
 }

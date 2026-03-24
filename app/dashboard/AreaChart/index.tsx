@@ -3,8 +3,6 @@
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts"
 import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart"
 
-export const description = "A simple area chart"
-
 const chartData = [
 	{ month: "January", desktop: 186 },
 	{ month: "February", desktop: 305 },

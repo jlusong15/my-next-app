@@ -10,10 +10,7 @@ export default function Contact() {
 	const FroalaEditor = dynamic(() => import('react-froala-wysiwyg'), { ssr: false });
 	const froalaConfig = {
 		height: 300,
-		// minHeight: 200,
-		// maxHeight: 600,
-		// toolbarButtons: ['bold', 'italic', 'underline'],
-		inlineMode: false, // important
+		inlineMode: false,
 	}
 	const [isLoading, setIsLoading] = React.useState<boolean>(false)
 	const [message, setMessage] = React.useState<string>("")

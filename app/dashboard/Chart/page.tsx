@@ -1,5 +1,6 @@
 "use client"
 
+import { SelectDropdown } from "@/app/components/Select"
 import {
 	ChartContainer,
 	ChartLegend,
@@ -8,11 +9,9 @@ import {
 	ChartTooltipContent,
 	type ChartConfig,
 } from "@/components/ui/chart"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useMemo, useState } from "react"
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts"
 import { chartData } from "./data"
-import { SelectDropdown } from "@/app/components/Select"
 
 export const description = "An interactive area chart"
 
