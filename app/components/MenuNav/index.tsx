@@ -8,7 +8,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 export default function MenuNav({ navigation }: { navigation: NavModel[] }) {
-	const pathname = usePathname();
+	const pathname = usePathname()
 	return (
 		<Disclosure as="nav" className="sticky top-0 bg-primary z-50">
 			<div className="px-2">
@@ -56,17 +56,17 @@ export default function MenuNav({ navigation }: { navigation: NavModel[] }) {
 								className="absolute right-0 z-10 mt-3 w-48 origin-top-right rounded-bl-md rounded-br-md bg-white py-1 shadow-lg outline outline-black/5 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
 							>
 								<MenuItem>
-									<a
-										href="#"
-										className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
+									<Link
+										href="/#about-me"
+										className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden cursor-pointer"
 									>
 										My Profile
-									</a>
+									</Link>
 								</MenuItem>
 								<MenuItem>
 									<a
 										href="https://buymeacoffee.com/jhennalilu"
-										className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
+										className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden cursor-pointer"
 										target="_blank"
 									>
 										Buy me coffee?

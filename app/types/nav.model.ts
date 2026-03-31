@@ -6,6 +6,10 @@ export interface NavModel {
 
 export const NavLinks: NavModel[] = [
 	{
+		href: "/",
+		name: "Home",
+	},
+	{
 		href: "/dashboard",
 		name: "Dashboard",
 	},
@@ -21,8 +25,8 @@ export const NavLinks: NavModel[] = [
 		href: "/to-do-list",
 		name: "To Do",
 	},
-	{
-		href: "/contact",
-		name: "Contact Me",
-	},
+	// {
+	// 	href: "/contact",
+	// 	name: "Contact Me",
+	// },
 ]
