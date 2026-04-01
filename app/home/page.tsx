@@ -31,7 +31,7 @@ export default function Home() {
 				}}
 			>
 				<div className="max-w-xl opacity-0 animate-[fadeIn_1s_ease-out_forwards]">
-					<Image src="/images/jenna.jpg" alt="Hero" width={150} height={150} className="rounded-[100%] mb-2" />
+					<Image src="/images/jenna.jpg" alt="Jenna" width={150} height={150} className="rounded-[100%] mb-2" />
 					<h1 className="text-2xl text-primary">Jennifer Bautista</h1>
 					<h2 className="text-lg text-secondary-foreground">
 						Frontend Developer | Software Engineer | UI/UX Developer
