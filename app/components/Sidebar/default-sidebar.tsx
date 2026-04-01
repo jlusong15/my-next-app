@@ -6,8 +6,8 @@ import { Input } from "@/components/ui/input"
 
 export default function DefaultSidebar() {
 	return (
-		<>
-			<Button>
+		<div className="px-1">
+			<Button className="w-full">
 				<CirclePlus className="mr-1" />
 				Add Task
 			</Button>
@@ -98,6 +98,6 @@ export default function DefaultSidebar() {
 					</div>
 				</div>
 			</CollapsibleSection>
-		</>
+		</div>
 	)
 }
