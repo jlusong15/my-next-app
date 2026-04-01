@@ -53,7 +53,7 @@ export default function MenuNav({ navigation }: { navigation: NavModel[] }) {
 
 							<MenuItems
 								transition
-								className="absolute right-0 z-10 mt-3 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg outline outline-black/5 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+								className="absolute right-0 z-10 mt-3 w-48 origin-top-right rounded-md bg-white py-2 shadow-lg outline outline-black/5 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
 							>
 								<MenuItem>
 									<Link
