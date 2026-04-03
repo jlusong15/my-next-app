@@ -157,7 +157,7 @@ export default function ToDoList() {
 			</ul>
 
 			{showForm && (
-				<div className="w-full flex flex-col p-3 rounded border gap-3 mt-3">
+				<div className="w-full max-w-100 m-auto flex flex-col p-3 rounded border gap-3 mt-3">
 					<span>
 						Description:
 						<Input onChange={handleDescriptionChange} value={form?.description ?? ""} disabled={isLoading}></Input>

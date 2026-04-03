@@ -23,9 +23,13 @@ export default function Dashboard() {
 	const [isGridLoading, setGridLoad] = useState<boolean>(true)
 
 	useEffect(() => {
+		initializeGridStack()
+	}, [])
+
+	const initializeGridStack = () => {
 		GridStack.init()
 		setGridLoad(false)
-	}, [])
+	}
 
 	return (
 		<div className="container">

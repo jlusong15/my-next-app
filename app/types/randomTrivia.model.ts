@@ -1,4 +1,9 @@
-export const randomTriviaList = [
+export interface Trivia {
+	id: number;
+	fact: string;
+}
+
+export const RandomTriviaList: Trivia[] = [
 	{ "id": 1, "fact": "Octopuses have three hearts, and when they swim, two of the hearts actually stop beating, which helps them conserve energy while propelling through water." },
 	{ "id": 2, "fact": "Bananas are botanically classified as berries, while strawberries are not, even though strawberries have 'berry' in their name." },
 	{ "id": 3, "fact": "Honey has natural preservatives and has been found in ancient Egyptian tombs still perfectly edible after thousands of years." },

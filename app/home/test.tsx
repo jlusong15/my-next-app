@@ -6,6 +6,4 @@ test('renders hello world', () => {
   expect(screen.getByText('Hello World!')).toBeInTheDocument()
 })
 
-function fetchData() {
-	throw new Error('Function not implemented.')
-}
+

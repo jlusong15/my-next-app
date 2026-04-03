@@ -1,4 +1,10 @@
-export const randomQuotesList = [
+export interface Quote {
+	id: number;
+	quote: string;
+	author: string;
+}
+
+export const RandomQuotesList: Quote[] = [
 	{ "id": 1, "quote": "The only way to do great work is to love what you do.", "author": "Steve Jobs" },
 	{ "id": 2, "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.", "author": "Winston Churchill" },
 	{ "id": 3, "quote": "In the middle of every difficulty lies opportunity.", "author": "Albert Einstein" },

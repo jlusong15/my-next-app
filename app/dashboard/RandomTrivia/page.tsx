@@ -1,16 +1,24 @@
 "use client"
 
+import { fetchRandomTrivia } from "@/app/services/randomTrivia.service"
+import { Spinner } from "@/components/ui/spinner"
 import { useEffect, useState } from "react"
-import { randomTriviaList } from "./data"
 
 export default function RandomTrivia() {
 	const [randomTrivia, setRandomTrivia] = useState<any>(null)
+	const [isLoading, setIsLoading] = useState(true)
 
 	useEffect(() => {
-		const trivia = randomTriviaList[Math.floor(Math.random() * randomTriviaList.length)]
-		setRandomTrivia(trivia)
+		getQuotes()
 	}, [])
 
+	async function getQuotes() {
+		const result = await fetchRandomTrivia()
+		setRandomTrivia(result)
+		setIsLoading(false)
+	}
+
+	if (isLoading) return <Spinner className="mt-4" />
 	if (!randomTrivia) return null
 
 	return (

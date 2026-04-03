@@ -1,16 +1,25 @@
 "use client"
 
+import { fetchRandomQuote } from "@/app/services/randomQuote.service"
+import { Quote } from "@/app/types/randomQuote.model"
+import { Spinner } from "@/components/ui/spinner"
 import { useEffect, useState } from "react"
-import { randomQuotesList } from "./data"
 
 export default function RandomQuote() {
-	const [randomQuote, setRandomQuote] = useState<any>(null)
+	const [randomQuote, setRandomQuote] = useState<Quote | undefined>(undefined)
+	const [isLoading, setIsLoading] = useState(true)
 
 	useEffect(() => {
-		const quote = randomQuotesList[Math.floor(Math.random() * randomQuotesList.length)]
-		setRandomQuote(quote)
+		getQuotes()
 	}, [])
 
+	async function getQuotes() {
+		const result = await fetchRandomQuote()
+		setRandomQuote(result)
+		setIsLoading(false)
+	}
+
+	if (isLoading) return <Spinner className="mt-4" />
 	if (!randomQuote) return null
 
 	return (
