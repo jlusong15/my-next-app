@@ -1,4 +1,5 @@
-import type { Page } from '@playwright/test';
+import { Page, expect } from '@playwright/test';
+import { getByTestId } from './general';
 
 export async function checkDropdownOptionExists(page: Page, testId: string, option: string) {
 	const trigger = page.locator(`[data-testid="${testId}"]`);
@@ -16,6 +17,11 @@ export async function selectDropdownOption(page: Page, testId: string, optionTex
 	const option = page.getByRole("option", { name: optionText }).first();
 	await option.waitFor({ state: 'visible' });
 	await option.click();
+}
+
+export async function selectAndVerifyDropdown(page: Page, testId: string, value: string) {
+	await selectDropdownOption(page, testId, value);
+	await expect(getByTestId(page, testId)).toHaveText(value);
 }
 
 export async function checkAllDropdownOptionExists(

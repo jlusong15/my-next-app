@@ -1,10 +1,10 @@
-import { expect, Page, test } from '@playwright/test';
-import { checkAllDropdownOptionExists, selectDropdownOption } from '../utils/dropdown';
-import { selectDate } from '../utils/datepicker';
+import { expect, test } from '@playwright/test';
+import { checkAllDropdownOptionExists, selectAndVerifyDropdown, selectDropdownOption } from '../utils/dropdown';
+import { selectAndVerifyDate, selectDate } from '../utils/datepicker';
 import { TaskCategoryList, TaskGroupList, TaskNameList } from '@/app/types/tasks.model';
-import { format } from 'date-fns';
 import { toggleCollapsible } from '../utils/collapsible';
 import { toggleSidebar } from '../utils/sidebar';
+import { fillAndVerifyText } from '../utils/input';
 
 const url = '/tasks';
 
@@ -16,8 +16,6 @@ const dateToday = new Date();
 
 const description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
 const note = `Curabitur elementum elementum augue, vitae tempus lorem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec ligula diam, lobortis eu laoreet quis, tincidunt quis mauris. Pellentesque ornare aliquam arcu, nec vestibulum sem cursus in. Sed consectetur dapibus elementum. Nam suscipit mi at urna vulputate, pretium tincidunt nisi semper.`;
-
-const getByTestId = (page: Page, id: string) => page.locator(`[data-testid="${id}"]`);
 
 test.describe('Tasks Page', () => {
 
@@ -52,34 +50,17 @@ test.describe('Tasks Page', () => {
 	});
 
 	test('Fill Form', async ({ page }) => {
-
 		// ----- Date
-		await selectDate(page, 'task-date', dateToday);
-		await expect(getByTestId(page, 'task-date'))
-			.toHaveText(format(dateToday, 'PP'));
+		await selectAndVerifyDate(page, 'task-date', dateToday);
 
 		// ----- Dropdowns
-		await selectDropdownOption(page, 'task-category', taskCategoryOptions[1]);
-		await expect(getByTestId(page, 'task-category'))
-			.toHaveText(taskCategoryOptions[1]);
+		await selectAndVerifyDropdown(page, 'task-category', taskCategoryOptions[1]);
+		await selectAndVerifyDropdown(page, 'task-name', taskNameOptions[1]);
+		await selectAndVerifyDropdown(page, 'task-group', taskGroupOptions[1]);
 
-		await selectDropdownOption(page, 'task-name', taskNameOptions[1]);
-		await expect(getByTestId(page, 'task-name'))
-			.toHaveText(taskNameOptions[1]);
-
-		await selectDropdownOption(page, 'task-group', taskGroupOptions[1]);
-		await expect(getByTestId(page, 'task-group'))
-			.toHaveText(taskGroupOptions[1]);
-
-		// ----- Input
-		const shortDesc = getByTestId(page, 'task-shortDescription');
-		await shortDesc.fill(description);
-		await expect(shortDesc).toHaveValue(description);
-
-		// ----- Textarea
-		const taskNote = getByTestId(page, 'task-note');
-		await taskNote.fill(note);
-		await expect(taskNote).toHaveValue(note);
+		// ----- Texts
+		await fillAndVerifyText(page, 'task-shortDescription', description)
+		await fillAndVerifyText(page, 'task-note', note);
 	});
 
 	test('Toggle Accordions', async ({ page }) => {
