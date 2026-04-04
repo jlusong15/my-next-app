@@ -24,12 +24,12 @@ export function SelectDropdown({
 	placeholder,
 	value,
 	testId,
-	onValueChange,
+	// onValueChange,
 	...props
 }: SelectDropdownProps) {
 	return (
 		<>
-			<Select value={value?.toString() ?? ""} onValueChange={onValueChange}>
+			<Select value={value?.toString()}>
 				<SelectTrigger
 					data-testid={testId}
 					className="w-full rounded-sm sm:ml-auto sm:flex"

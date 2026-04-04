@@ -11,37 +11,11 @@ export async function checkDropdownOptionExists(page: Page, testId: string, opti
 
 export async function selectDropdownOption(page: Page, testId: string, optionText: string) {
 	const trigger = page.locator(`[data-testid="${testId}"]`);
-	await trigger.click(); // Open the dropdown
-	// 1️⃣ Wait for portal to appear
-	// const portal = page.locator('[data-radix-portal]'); // ShadCN portal wrapper
-	// await portal.waitFor({ state: 'visible' });
+	await trigger.click();
 
-	// // Use getByRole("option", { name }) for reliable selection
-	// const option = page.getByRole("option", { name: optionText }).first();
-	// await option.waitFor({ state: 'visible' });
-	// await option.click(); // Click to select
-
-	// await page.locator(`[data-testid="${testId}"]`).first().click();
-	// await page.getByRole("listbox").getByRole("option").first().click();
-
-	// 2️⃣ Wait for the portal options to be visible
-	const option = page.getByRole('option', { name: optionText }).first();
+	const option = page.getByRole("option", { name: optionText }).first();
 	await option.waitFor({ state: 'visible' });
-
-	// Get the bounding box and click using mouse (real pointer event)
-	const box = await option.boundingBox();
-	if (!box) throw new Error(`Option "${optionText}" is not visible for clicking`);
-
-	await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
-
-	// Tiny wait for trigger text to update
-	await page.waitForTimeout(50);
-	// await option.click(); // Click to select
-	// await expect(page.getByRole("combobox").first()).toHaveText(/Pineapple/);
-
-	// const selectedText = page.locator(`[data-testid="${testId}"]`).innerText();
-	// console.log(selectedText)
-	// await expect(selectedText).toBe(option);
+	await option.click();
 }
 
 export async function checkAllDropdownOptionExists(
@@ -82,3 +56,4 @@ export async function checkAllDropdownOptionExists(
 		);
 	}
 }
+
