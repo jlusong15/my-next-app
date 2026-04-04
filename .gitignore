@@ -41,9 +41,9 @@ yarn-error.log*
 next-env.d.ts
 
 # Playwright artifacts
-test-results/
-playwright-report/
-blob-report/
+/test-results
+/playwright-report
+/blob-report
 trace.zip
 *.trace
 *.har
