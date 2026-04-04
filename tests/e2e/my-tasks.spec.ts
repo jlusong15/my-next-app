@@ -1,10 +1,10 @@
-import { expect, test } from '@playwright/test';
-import { checkAllDropdownOptionExists, selectAndVerifyDropdown, selectDropdownOption } from '../utils/dropdown';
-import { selectAndVerifyDate, selectDate } from '../utils/datepicker';
 import { TaskCategoryList, TaskGroupList, TaskNameList } from '@/app/types/tasks.model';
+import { expect, test } from '@playwright/test';
 import { toggleCollapsible } from '../utils/collapsible';
-import { toggleSidebar } from '../utils/sidebar';
+import { selectAndVerifyDate } from '../utils/datepicker';
+import { checkAllDropdownOptionExists, selectAndVerifyDropdown } from '../utils/dropdown';
 import { fillAndVerifyText } from '../utils/input';
+import { toggleSidebar } from '../utils/sidebar';
 
 const url = '/tasks';
 
