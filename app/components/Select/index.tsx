@@ -1,5 +1,8 @@
+"use client"
+
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { cn } from "@/lib/utils"
+import { useState } from "react"
 
 interface SelectDropdownItemModel {
 	value: string
@@ -24,12 +27,22 @@ export function SelectDropdown({
 	placeholder,
 	value,
 	testId,
-	// onValueChange,
+	onValueChange,
 	...props
 }: SelectDropdownProps) {
+	const [selectedValue, setSelectedValue] = useState<string | undefined>(value?.toString())
 	return (
 		<>
-			<Select value={value?.toString()}>
+			<Select
+				value={(value ?? selectedValue)?.toString()}
+				onValueChange={(val) => {
+					if (onValueChange) {
+						onValueChange(val)
+					} else {
+						setSelectedValue(val) // ← add/update your variable here
+					}
+				}}
+			>
 				<SelectTrigger
 					data-testid={testId}
 					className="w-full rounded-sm sm:ml-auto sm:flex"
