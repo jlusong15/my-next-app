@@ -212,6 +212,7 @@ function Sidebar({
       data-variant={variant}
       data-side={side}
       data-slot="sidebar"
+      data-testid="sidebar-content"
     >
       {/* This is what handles the sidebar gap on desktop */}
       <div
@@ -261,6 +262,7 @@ function SidebarTrigger({
     <Button
       data-sidebar="trigger"
       data-slot="sidebar-trigger"
+      data-testid="sidebar-trigger"
       variant="ghost"
       size="icon-sm"
       className={cn(className)}

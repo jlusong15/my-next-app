@@ -7,7 +7,6 @@ import { SelectDropdown } from "../components/Select"
 import { TaskGroupList, TaskCategoryList, TaskNameList } from "../types/tasks.model"
 
 export default function TasksPage() {
-
 	return (
 		<div className="px-5">
 			<div className="mb-5">
@@ -20,6 +19,7 @@ export default function TasksPage() {
 
 			<div className="pt-5 grid gap-y-5">
 				<CollapsibleSection
+					testId="task-step1"
 					defaultOpen={true}
 					triggerHeader={
 						<span className="flex items-center text-sm">
@@ -35,7 +35,7 @@ export default function TasksPage() {
 							</div>
 							<div className="flex flex-col w-full md:w-1/2">
 								<label className="mb-1 text-xs">Schedule</label>
-								<DatePicker testId="task-date"/>
+								<DatePicker testId="task-date" />
 							</div>
 						</div>
 
@@ -49,18 +49,22 @@ export default function TasksPage() {
 					</div>
 				</CollapsibleSection>
 
-				<CollapsibleSection defaultOpen={true} triggerHeader={<span className="items-center text-sm">Step2</span>}>
+				<CollapsibleSection
+					testId="task-step2"
+					defaultOpen={true}
+					triggerHeader={<span className="items-center text-sm">Step2</span>}
+				>
 					<div className="px-10 mb-2.5 ml-3 border-l border-l-neutral-200">
 						<div className="flex flex-col md:flex-row mx-5 gap-5">
 							<div className="flex flex-col w-full md:w-1/2 pb-5 pr-md-0">
 								<label className="mb-1 text-xs">Short Description</label>
-								<Input className="w-full md:w-auto" />
+								<Input testId="task-shortDescription" className="w-full md:w-auto" />
 							</div>
 						</div>
 						<div className="flex flex-col md:flex-row mx-5 gap-5">
 							<div className="flex flex-col w-full md:w-1/2 pb-5 pr-md-0">
 								<label className="mb-1 text-xs">Other Notes</label>
-								<Textarea />
+								<Textarea testId="task-note" />
 							</div>
 						</div>
 					</div>
