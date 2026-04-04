@@ -4,50 +4,9 @@ import { CircleCheck } from "lucide-react"
 import { CollapsibleSection } from "../components/CollapsibleSection"
 import { DatePicker } from "../components/DatePicker"
 import { SelectDropdown } from "../components/Select"
+import { TaskGroupList, TaskCategoryList, TaskNameList } from "../types/tasks.model"
 
 export default function TasksPage() {
-	const taskCategoryList = [
-		{
-			value: "story",
-			display: "Story",
-		},
-		{
-			value: "bug",
-			display: "Bug",
-		},
-		{
-			value: "support",
-			display: "Support",
-		},
-	]
-	const taskNameList = [
-		{
-			value: "planning",
-			display: "Development Planning",
-		},
-		{
-			value: "grooming",
-			display: "Backlog Grooming",
-		},
-		{
-			value: "review",
-			display: "Sprint Review",
-		},
-	]
-	const groupList = [
-		{
-			value: "dev",
-			display: "Dev Team",
-		},
-		{
-			value: "qa",
-			display: "QA Team",
-		},
-		{
-			value: "sr",
-			display: "Senior/Lead",
-		},
-	]
 
 	return (
 		<div className="px-5">
@@ -56,7 +15,7 @@ export default function TasksPage() {
 			</div>
 			<p>Task Category</p>
 			<div className="my-2">
-				<SelectDropdown placeholder="Select a task category..." items={taskCategoryList} />
+				<SelectDropdown testId="task-category" placeholder="Select a task category..." items={TaskCategoryList} />
 			</div>
 
 			<div className="pt-5 grid gap-y-5">
@@ -71,19 +30,19 @@ export default function TasksPage() {
 					<div className="px-10 mb-2.5 ml-3 border-l border-l-neutral-200">
 						<div className="flex flex-col md:flex-row mx-5 pt-5 mb-5 gap-5">
 							<div className="flex flex-col w-full md:w-1/2">
-								<span className="mb-1 text-xs">Task Name</span>
-								<SelectDropdown className="w-full" items={taskNameList} />
+								<label className="mb-1 text-xs">Task Name</label>
+								<SelectDropdown testId="task-name" className="w-full" items={TaskNameList} />
 							</div>
 							<div className="flex flex-col w-full md:w-1/2">
-								<span className="mb-1 text-xs">Schedule</span>
-								<DatePicker />
+								<label className="mb-1 text-xs">Schedule</label>
+								<DatePicker testId="task-date"/>
 							</div>
 						</div>
 
 						<div className="flex flex-col md:flex-row mx-5 gap-5 pb-5">
 							<div className="flex flex-col w-full md:w-1/2">
-								<span className="mb-1 text-xs">Group</span>
-								<SelectDropdown className="w-full" items={groupList} />
+								<label className="mb-1 text-xs">Group</label>
+								<SelectDropdown testId="task-group" className="w-full" items={TaskGroupList} />
 							</div>
 							<div className="flex flex-col w-full md:w-1/2"></div>
 						</div>
@@ -94,13 +53,13 @@ export default function TasksPage() {
 					<div className="px-10 mb-2.5 ml-3 border-l border-l-neutral-200">
 						<div className="flex flex-col md:flex-row mx-5 gap-5">
 							<div className="flex flex-col w-full md:w-1/2 pb-5 pr-md-0">
-								<span className="mb-1 text-xs">Short Description</span>
+								<label className="mb-1 text-xs">Short Description</label>
 								<Input className="w-full md:w-auto" />
 							</div>
 						</div>
 						<div className="flex flex-col md:flex-row mx-5 gap-5">
 							<div className="flex flex-col w-full md:w-1/2 pb-5 pr-md-0">
-								<span className="mb-1 text-xs">Other Notes</span>
+								<label className="mb-1 text-xs">Other Notes</label>
 								<Textarea />
 							</div>
 						</div>
