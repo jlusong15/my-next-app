@@ -18,7 +18,6 @@ const description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
 const note = `Curabitur elementum elementum augue, vitae tempus lorem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec ligula diam, lobortis eu laoreet quis, tincidunt quis mauris. Pellentesque ornare aliquam arcu, nec vestibulum sem cursus in. Sed consectetur dapibus elementum. Nam suscipit mi at urna vulputate, pretium tincidunt nisi semper.`;
 
 test.describe('Tasks Page', () => {
-
 	test.beforeEach(async ({ page }) => {
 		await page.goto(url);
 	});
@@ -31,16 +30,6 @@ test.describe('Tasks Page', () => {
 		await expect(
 			page.getByRole('heading', { name: 'Add Task' })
 		).toBeVisible();
-	});
-
-	test('Sidebar Section Loaded', async ({ page }) => {
-		await expect(
-			page.locator('[data-slot="sidebar-wrapper"]')
-		).toHaveCount(1);
-	});
-
-	test('Toggle Sidebar', async ({ page }) => {
-		await toggleSidebar(page, 'sidebar-trigger', 'sidebar-content');
 	});
 
 	test('Check Dropdowns Options', async ({ page }) => {
@@ -66,5 +55,21 @@ test.describe('Tasks Page', () => {
 	test('Toggle Accordions', async ({ page }) => {
 		await toggleCollapsible(page, 'task-step1-trigger', 'task-step1-content');
 		await toggleCollapsible(page, 'task-step2-trigger', 'task-step2-content');
+	});
+});
+
+test.describe('Tasks Page Sidebar', () => {
+	test.beforeEach(async ({ page }) => {
+		await page.goto(url);
+	});
+
+	test('Sidebar Section Loaded', async ({ page }) => {
+		await expect(
+			page.locator('[data-slot="sidebar-wrapper"]')
+		).toHaveCount(1);
+	});
+
+	test('Toggle Sidebar', async ({ page }) => {
+		await toggleSidebar(page, 'sidebar-trigger', 'sidebar-content');
 	});
 });
