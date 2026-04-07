@@ -31,7 +31,14 @@ export default function Home() {
 				}}
 			>
 				<div className="max-w-xl text-center sm:text-left opacity-0 animate-[fadeIn_1s_ease-out_forwards]">
-					<Image src="/images/jenna.jpg" alt="Jenna" width={150} height={150} className="rounded-[100%] mb-2 m-auto sm:m-0" />
+					<Image
+						src="/images/jenna.jpg"
+						alt="Jenna"
+						width={150}
+						height={150}
+						className="rounded-[100%] mb-2 m-auto sm:m-0"
+						loading="lazy"
+					/>
 					<h1 className="text-xl sm:text-2xl text-primary">Jennifer Bautista</h1>
 					<h2 className="text-sm sm:text-lg text-secondary-foreground">
 						Frontend Developer | Software Engineer | UI/UX Developer
