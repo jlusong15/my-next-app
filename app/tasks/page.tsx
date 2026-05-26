@@ -1,10 +1,10 @@
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { CircleCheck } from "lucide-react"
-import { CollapsibleSection } from "../components/CollapsibleSection"
-import { DatePicker } from "../components/DatePicker"
-import { SelectDropdown } from "../components/Select"
-import { TaskGroupList, TaskCategoryList, TaskNameList } from "../types/tasks.model"
+import { CollapsibleSection } from "../../components/shared/CollapsibleSection"
+import { DatePicker } from "../../components/shared/DatePicker"
+import { SelectDropdown } from "../../components/shared/Select"
+import { TaskGroupList, TaskCategoryList, TaskNameList } from "../../types/tasks.model"
 
 export default function TasksPage() {
 	return (

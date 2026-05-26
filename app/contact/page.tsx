@@ -1,7 +1,7 @@
 "use client"
 
 import { toast } from "sonner"
-import Button from "../components/Button"
+import Button from "../../components/shared/Button"
 import dynamic from "next/dynamic"
 import React from "react";
 

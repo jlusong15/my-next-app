@@ -1,6 +1,6 @@
 "use client"
 
-import { NavModel } from "@/app/types/nav.model"
+import { NavModel } from "@/types/nav.model"
 import { cn } from "@/lib/utils"
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react"
 import { Cat, Menu as MenuIcon, X } from "lucide-react"

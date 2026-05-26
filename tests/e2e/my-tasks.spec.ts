@@ -1,4 +1,4 @@
-import { TaskCategoryList, TaskGroupList, TaskNameList } from '@/app/types/tasks.model';
+import { TaskCategoryList, TaskGroupList, TaskNameList } from '@/types/tasks.model';
 import { expect, test } from '@playwright/test';
 import { toggleCollapsible } from '../utils/collapsible';
 import { selectAndVerifyDate } from '../utils/datepicker';

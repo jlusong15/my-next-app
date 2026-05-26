@@ -1,6 +1,6 @@
 "use client"
 
-import { IntegratedDataTableModel, IntegratedDataTablePayload } from "@/app/types/dashboard.model"
+import { IntegratedDataTableModel, IntegratedDataTablePayload } from "@/types/dashboard.model"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Spinner } from "@/components/ui/spinner"

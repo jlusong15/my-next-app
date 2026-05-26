@@ -1,11 +1,11 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
-import { AppSidebar } from "../components/Sidebar"
-import { BreadcrumbBasic } from "../components/BreadcrumbBasic"
-import Button from "../components/Button"
+import { AppSidebar } from "../../components/shared/Sidebar"
+import { BreadcrumbBasic } from "../../components/shared/BreadcrumbBasic"
+import Button from "../../components/shared/Button"
 import { Calendar, CircleCheck, CircleDashed, CirclePlus, Logs, Timer } from "lucide-react"
 import { Input } from "@/components/ui/input"
-import { PopoverBasic } from "../components/Popover"
-import { CollapsibleSection } from "../components/CollapsibleSection"
+import { PopoverBasic } from "../../components/shared/Popover"
+import { CollapsibleSection } from "../../components/shared/CollapsibleSection"
 
 export default function TasksLayout({ children }: { children: React.ReactNode }) {
 	const taskBreadcrumb = [

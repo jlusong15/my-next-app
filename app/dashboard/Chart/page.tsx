@@ -1,6 +1,6 @@
 "use client"
 
-import { SelectDropdown } from "@/app/components/Select"
+import { SelectDropdown } from "@/components/shared/Select"
 import {
 	ChartContainer,
 	ChartLegend,

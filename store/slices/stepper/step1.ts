@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../.."
-import { StepperForm1 } from "@/app/types/stepper.model"
+import { StepperForm1 } from "@/types/stepper.model"
 
 const step1Slice = createSlice({
 	name: "step1",

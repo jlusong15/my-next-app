@@ -2,18 +2,18 @@
 
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
-import { useAppDispatch, useAppSelector } from "../store/hooks"
+import { useAppDispatch, useAppSelector } from "../../store/hooks"
 import { Check, CreditCard, House, UserRoundPen } from "lucide-react"
 import { ReactNode, useState } from "react"
 import Step1 from "./Step1"
 import Step2 from "./Step2"
 import Step3 from "./Step3"
 import Step4 from "./Step4"
-import Button from "../components/Button"
-import { FormSteps } from "../types/stepper.model"
-import { resetStep1Form, step1Selector } from "../store/slices/stepper/step1"
-import { resetStep2Form, step2Selector } from "../store/slices/stepper/step2"
-import { resetStep3Form, step3Selector } from "../store/slices/stepper/step3"
+import Button from "../../components/shared/Button"
+import { FormSteps } from "../../types/stepper.model"
+import { resetStep1Form, step1Selector } from "../../store/slices/stepper/step1"
+import { resetStep2Form, step2Selector } from "../../store/slices/stepper/step2"
+import { resetStep3Form, step3Selector } from "../../store/slices/stepper/step3"
 
 export default function StepperForm() {
 	const [currentStep, setCurrentStep] = useState<number>(0)

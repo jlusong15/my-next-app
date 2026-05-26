@@ -5,8 +5,8 @@ import { Input } from "@/components/ui/input"
 import { cn } from "@/lib/utils"
 import { Ban, LoaderCircle, Pencil, Save, X } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
-import ButtonLoader from "../components/Button"
-import { ToDoListInitial, ToDoListModel } from "../types/form.model"
+import ButtonLoader from "../../components/shared/Button"
+import { ToDoListInitial, ToDoListModel } from "../../types/form.model"
 
 export default function ToDoList() {
 	const [isLoading, setLoading] = useState<boolean>(false)

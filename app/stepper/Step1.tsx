@@ -6,9 +6,9 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useEffect } from "react"
 import { FormProvider, useForm } from "react-hook-form"
 import { z } from "zod"
-import { useAppDispatch } from "../store/hooks"
-import { setStep1Form, setStep1Validity } from "../store/slices/stepper/step1"
-import { StepperForm1 } from "../types/stepper.model"
+import { useAppDispatch } from "../../store/hooks"
+import { setStep1Form, setStep1Validity } from "../../store/slices/stepper/step1"
+import { StepperForm1 } from "../../types/stepper.model"
 
 const FormValues = z.object({
 	firstName: z.string().min(1, { message: "" }),

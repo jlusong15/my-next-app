@@ -1,6 +1,6 @@
 "use client"
 
-import { useGlobalStore } from "@/app/store/useGlobalStore"
+import { useGlobalStore } from "@/store/useGlobalStore"
 import { Spinner } from "@/components/ui/spinner"
 import { useEffect } from "react"
 

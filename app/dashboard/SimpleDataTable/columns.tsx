@@ -1,4 +1,4 @@
-import { CharacterTableDataDocsModel } from "@/app/types/dashboard.model"
+import { CharacterTableDataDocsModel } from "@/types/dashboard.model"
 import { Button } from "@/components/ui/button"
 import { Column, ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"

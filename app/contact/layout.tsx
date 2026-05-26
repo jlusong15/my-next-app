@@ -1,5 +1,5 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
-import { AppSidebar } from "../components/Sidebar"
+import { AppSidebar } from "../../components/shared/Sidebar"
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {
 	return (

@@ -1,5 +1,5 @@
-import { dashboardApi } from "@/app/services/dashboard.service"
-import { CharacterModel } from "@/app/types/browse.model"
+import { dashboardApi } from "@/services/dashboard.service"
+import { CharacterModel } from "@/types/browse.model"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../.."
 

@@ -1,4 +1,4 @@
-import { IntegratedDataTableDocsModel } from "@/app/types/dashboard.model"
+import { IntegratedDataTableDocsModel } from "@/types/dashboard.model"
 import { Button } from "@/components/ui/button"
 import { Column, ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"

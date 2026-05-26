@@ -1,6 +1,6 @@
 
-import { browseApi } from "@/app/services/browse.service"
-import { CharacterDocsModel } from "@/app/types/browse.model"
+import { browseApi } from "@/services/browse.service"
+import { CharacterDocsModel } from "@/types/browse.model"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../.."
 

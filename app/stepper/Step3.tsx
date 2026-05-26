@@ -2,9 +2,9 @@
 
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { useAppDispatch } from "../store/hooks"
-import { setStep3Form, setStep3Validity } from "../store/slices/stepper/step3"
-import { StepperForm3 } from "../types/stepper.model"
+import { useAppDispatch } from "../../store/hooks"
+import { setStep3Form, setStep3Validity } from "../../store/slices/stepper/step3"
+import { StepperForm3 } from "../../types/stepper.model"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useEffect } from "react"
 import { FormProvider, useForm } from "react-hook-form"
