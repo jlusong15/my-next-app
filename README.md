@@ -1,4 +1,6 @@
 # React Next.js (TypeScript)
+A simple React application demonstrating the usage of the technologies listed below.
+
 Demo deployed on https://my-next-app-ecru-alpha.vercel.app/dashboard
 
 # 🚀 Tech Stack
