@@ -37,3 +37,19 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Playwright Testing
+Installation
+```bash
+npx playwright install
+```
+
+Run test
+```bash
+npx playwright test
+```
+
+Run test with UI
+```bash
+npx playwright test --ui
+```
