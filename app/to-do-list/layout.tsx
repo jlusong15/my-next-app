@@ -17,7 +17,7 @@ export default function ToDoListLayout({ children }: { children: React.ReactNode
 								<SidebarTrigger className="cursor-pointer" />
 							</div>
 							<div className="flex w-full px-3.75 border-l border-l-neutral-200 font-bold">
-								<span className="font-bold">Send me a message</span>
+								<span className="font-bold">To Do List</span>
 							</div>
 						</div>
 
