@@ -17,7 +17,7 @@ Demo deployed on https://my-next-app-ecru-alpha.vercel.app/dashboard
 
 # 📁 Project Structure
 ```txt
-frontend/ # Next.js app
+my-next-app/
 ├── app/
 ├── api/
 ├── components/
@@ -33,7 +33,6 @@ frontend/ # Next.js app
 ### Run React Project
 
 ```bash
-cd frontend
 npm run dev
 ```
 
